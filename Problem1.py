@@ -27,7 +27,7 @@ def part_b():
     f = (2/np.sqrt(np.pi))  #first half (non-integral part) of erf function
 
     results = []
-    
+
     # loop first calculates the value of integral using scipy.integrate.quad(), then adds overall result to array after calculation
     for i in x:
         integrated = integrate.quad(integral, 0, i) #calculates integral part of function
