@@ -33,17 +33,17 @@ def part_b():
         integrated = integrate.quad(integral, 0, i) #calculates integral part of function
         results.append(f*integrated[0])    # multiplies integral part by non-integral part, then adds result to array
 
-    # trapz stuff
+
+    # trapz integration
     xx = np.array([0,0.1])
     func = lambda t: (2/np.sqrt(np.pi))*((np.e)**(-t**2))
-    temp = func(xx)
     trap_results = []
     for i in range(10):
         temp = func(xx)
         trap_results.append(integrate.trapz(temp, xx))
         xx[1] = xx[1]+0.1
-    print(trap_results)
     # end trapz stuff
+
 
     print("x-value   Integrate Results    trapz Results")
     print("--------------------------------------------")
@@ -54,7 +54,7 @@ def part_b():
 def part_c(results):
     x = np.linspace(0.1, 1, 10) # creates a range of x values
     y = special.erf(x)  # calculates error function values using erf()
-    print("x-value  |  Part C Results  |  Part B Results")
+    print("x-value  |  Part C Results  |  Part B Results(integrate results)")
     print("---------------------------------------------")
     for i in range(len(x)): print("%0.1f" % x[i], "     | ", "%0.12f" % y[i], " | ", "%0.12f" % results[i])  #prints erf value for each x value
 
